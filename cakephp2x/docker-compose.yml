@@ -2,7 +2,7 @@ version: '3'
 
 services:
   cake:
-    image: cakephp:test
+    image: theiwaz/cakephp2x:latest
     ports:
       - "8080:80"
     volumes: 
