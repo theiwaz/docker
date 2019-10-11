@@ -52,15 +52,15 @@ RUN a2enmod rewrite
 
 ## COPY or download cake to current workdir
 # COPY ./cakephp .
-run git clone -b 3.x git://github.com/cakephp/cakephp.git . 
+run git clone -b 3.next git://github.com/cakephp/cakephp.git . 
 
 
 ## Grant r/w on for group 
-RUN chmod -R +766 app/tmp \
-	&& chmod -R +766 lib/Cake/Cache
+# RUN chmod -R +766 app/tmp \
+# RUN  chmod -R +766 lib/Cake/Cache
 
 ## Uncomment default timezone and uncomment config timezone
-RUN sed -ibak "/'Config.timezone/s/\/\///g" app/Config/core.php \
-	&& sed -ibak "/date_default_timezone_set/s/\/\///g" app/Config/core.php 
+# RUN sed -ibak "/'Config.timezone/s/\/\///g" app/Config/core.php \
+# 	&& sed -ibak "/date_default_timezone_set/s/\/\///g" app/Config/core.php 
 
 ## no CMD because it's inherited from the FROM image
